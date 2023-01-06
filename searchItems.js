@@ -76,7 +76,6 @@ template.innerHTML =
             }).join('')
         }
     </ul>
-    <p class="para">No User Found</p>
 </div>
 `
 
@@ -96,23 +95,15 @@ class SearchItems extends HTMLElement {
     }
 
     searchFilter(value) {
+        console.log
         const ListItems = this.shadowRoot.querySelectorAll('#listed');
         if(value.trim()?.length > 0) {
            Array.from(ListItems).filter((val) => {
             if(val.innerText.toLowerCase().indexOf(value.toLowerCase()) == -1) {
                 val.classList.add('hide')
-                Array.from(ListItems).every((val) => {
-                    if(val.className === 'hide') {
-                        this.shadowRoot.querySelector('.para').classList.add('show')
-                    }
-                    else {
-                        this.shadowRoot.querySelector('.para').classList.add('hide')
-                    }
-                })
             }
             else {
                 val.classList.remove('hide')
-                this.shadowRoot.querySelector('.para').classList.add('hide')
             }
            })
            
