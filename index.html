@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module" src="./list.js" defer></script>
+    <script type="module" src="./searchItems.js" defer></script>
+    <script type="module" src="./wordCounter.js" defer></script>
+    <script type="module" src="./progress.js" defer></script>
+    <script type="module" src="./dataTrial.js" defer></script>
+    <script src="./polyfill.js" defer></script>
+    <script src="./objProps.js" defer></script>
+    <script src="./factoryPattern.js" defer></script>
+    <script src="./singletonPattern.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- <script src="./regex.js" defer></script> -->
+
+    <multi-list></multi-list>
+    <search-input ></search-input>
+    <word-count></word-count>
+
+    <!--Method to set non-standard attribute or property on html tag (setter, getter or setAttribute with JSON.stringify)-->
+    <data-trial data-info=""></data-trial>
+
+    <script defer>
+        const users = [
+            {name: 'Tabish',  role: 'Dev'},
+            {
+                name: 'Mohid',
+                role: 'Dev'
+            },
+            {
+                name: 'Fida',
+                role: 'Dev'
+            },
+            {
+                name: 'Ahtasham',
+                role: 'Dev'
+            },
+            {
+                name: 'Steve',
+                role: 'Dev'
+            }
+        ]
+        // document.querySelector('data-trial').setAttribute('data-info', JSON.stringify(users)) // alternative method
+        const u = document.querySelector('data-trial')
+        u.Value = users
+    </script>
+
+</body>
+</html>
